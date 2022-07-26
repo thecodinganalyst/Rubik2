@@ -1,3 +1,5 @@
+package RubikCube;
+
 public class RubikSquare {
     private RubikSquare up;
     private RubikSquare right;

@@ -1,3 +1,6 @@
+package RubikCube;
+
+import RubikCube.RubikCube;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.*;

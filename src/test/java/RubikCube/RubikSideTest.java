@@ -1,3 +1,7 @@
+package RubikCube;
+
+import RubikCube.RubikSide;
+import RubikCube.RubikSquare;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.*;

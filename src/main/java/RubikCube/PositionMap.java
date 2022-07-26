@@ -1,3 +1,5 @@
+package RubikCube;
+
 import java.util.HashMap;
 
 public class PositionMap<V> extends HashMap<Position, V> {

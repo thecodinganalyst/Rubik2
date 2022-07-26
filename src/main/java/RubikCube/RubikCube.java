@@ -1,4 +1,4 @@
-import java.util.stream.IntStream;
+package RubikCube;
 
 public class RubikCube {
 

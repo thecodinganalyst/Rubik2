@@ -1,3 +1,5 @@
+package RubikCube;
+
 public class RubikSide {
 
     private final PositionMap<RubikSquare> squareMap;
@@ -7,7 +9,7 @@ public class RubikSide {
     public RubikSide(Integer size, Integer value){
         this.size = size;
         this.max = size - 1;
-        squareMap = new PositionMap<>();
+        squareMap = new PositionMap<RubikSquare>();
         create(value, new Position(0, 0));
     }
 
