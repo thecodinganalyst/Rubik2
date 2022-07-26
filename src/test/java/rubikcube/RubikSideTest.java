@@ -1,7 +1,5 @@
-package RubikCube;
+package rubikcube;
 
-import RubikCube.RubikSide;
-import RubikCube.RubikSquare;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.*;
@@ -59,5 +57,11 @@ class RubikSideTest {
         assertThat(bottomRight.getLeft(), equalTo(bottomCenter));
 
         assertThat(bottomRight.getRight(), equalTo(null));
+    }
+
+    @Test
+    void isComplete() {
+        RubikSide side = new RubikSide(3, 1);
+        assertThat(side.isComplete(), is(true));
     }
 }

@@ -1,4 +1,6 @@
-package RubikCube;
+package rubikcube;
+
+import java.util.Objects;
 
 public class RubikSide {
 
@@ -31,5 +33,12 @@ public class RubikSide {
 
     public int squareCount(){
         return squareMap.size();
+    }
+
+    public boolean isComplete(){
+        return squareMap.values()
+                .stream()
+                .map(RubikSquare::getValue)
+                .allMatch(value -> Objects.equals(value, getValue(0, 0)));
     }
 }

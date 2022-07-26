@@ -1,4 +1,4 @@
-package Solution;
+package solutioning;
 
 public interface Action<S> {
     String getName();

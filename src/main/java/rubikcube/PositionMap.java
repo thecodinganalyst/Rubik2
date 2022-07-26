@@ -1,4 +1,4 @@
-package RubikCube;
+package rubikcube;
 
 import java.util.HashMap;
 

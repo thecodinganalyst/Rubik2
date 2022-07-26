@@ -1,4 +1,4 @@
-package Solution;
+package solutioning;
 
 import java.time.Duration;
 import java.time.Instant;

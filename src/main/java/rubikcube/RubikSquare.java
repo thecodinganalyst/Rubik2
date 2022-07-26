@@ -1,4 +1,4 @@
-package RubikCube;
+package rubikcube;
 
 public class RubikSquare {
     private RubikSquare up;

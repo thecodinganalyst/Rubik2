@@ -1,4 +1,4 @@
-package Solution;
+package solutioning;
 
 public interface Strategy<S> {
     ExecutionSummary<S> execute(Subject<S> subject);

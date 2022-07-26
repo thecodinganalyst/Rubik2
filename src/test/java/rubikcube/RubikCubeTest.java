@@ -1,6 +1,5 @@
-package RubikCube;
+package rubikcube;
 
-import RubikCube.RubikCube;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.*;
@@ -21,4 +20,7 @@ class RubikCubeTest {
         assertThat(cube.getBottom().getValue(0, 0), equalTo(6));
     }
 
+    @Test
+    void check() {
+    }
 }

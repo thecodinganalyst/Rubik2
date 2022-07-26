@@ -3,3 +3,10 @@
 /build/
 /build/classes/java/main/
 /build/classes/java/test/
+/.idea/compiler.xml
+/.idea/gradle.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml
+/.idea/.gitignore

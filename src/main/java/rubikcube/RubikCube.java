@@ -1,6 +1,11 @@
-package RubikCube;
+package rubikcube;
 
-public class RubikCube {
+import solutioning.Action;
+import solutioning.Subject;
+
+import java.util.List;
+
+public class RubikCube implements Subject<RubikCube> {
 
     private final Integer size;
     private RubikSide main;
@@ -48,5 +53,44 @@ public class RubikCube {
 
     public RubikSide getBottom() {
         return bottom;
+    }
+
+    @Override
+    public void performAction(Action<RubikCube> action) {
+
+    }
+
+    @Override
+    public void performActionList(List<Action<RubikCube>> actions) {
+
+    }
+
+    @Override
+    public Action<RubikCube>[] getAllActions() {
+        return new Action[0];
+    }
+
+    @Override
+    public boolean check() {
+        return false;
+    }
+
+    @Override
+    public boolean isComplete() {
+        return false;
+    }
+
+    public List<RubikSide> getAllSides(){
+        return List.of(main, right, back, left, top, bottom);
+    }
+
+    @Override
+    public void print() {
+
+    }
+
+    @Override
+    public Subject<RubikCube> clone() throws CloneNotSupportedException {
+        return null;
     }
 }
