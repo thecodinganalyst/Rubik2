@@ -3,7 +3,12 @@ package rubikcube;
 import solutioning.Action;
 import solutioning.Subject;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class RubikCube implements Subject<RubikCube> {
 
@@ -72,21 +77,46 @@ public class RubikCube implements Subject<RubikCube> {
 
     @Override
     public boolean check() {
-        return false;
+        List<Integer> valueList = getAllSides().stream()
+                .flatMap(RubikSide::getAllValuesStream)
+                .toList();
+        Map<Integer, List<Integer>> valueMap = valueList.stream()
+                .collect(Collectors.groupingBy(Integer::intValue));
+
+        System.out.println(Math.pow(size, 2));
+        return valueMap.keySet().containsAll(List.of(1, 2, 3, 4, 5, 6)) &&
+                valueMap.values().stream().map(List::size).allMatch(i -> i == Math.pow(size, 2));
     }
 
     @Override
     public boolean isComplete() {
-        return false;
+        return getAllSides().stream().allMatch(RubikSide::isComplete);
     }
 
     public List<RubikSide> getAllSides(){
         return List.of(main, right, back, left, top, bottom);
     }
 
-    @Override
-    public void print() {
+    private List<String> join(List<String>... sides){
+        BinaryOperator<List<String>> reducer = (a, b) ->
+                IntStream.range(0, a.size())
+                        .boxed()
+                        .map(i -> a.get(i).concat(" ").concat(b.get(i)))
+                        .toList();
+        List<String> result = Arrays.stream(sides).reduce(reducer).orElseThrow();
+        return result.stream().map(line -> line.concat(System.lineSeparator())).toList();
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        List<String> box = join(RubikSide.getEmptyString(getSize()), getTop().getString());
+        box.forEach(builder::append);
+        box = join(getLeft().getString(), getMain().getString(), getRight().getString(), getBack().getString());
+        box.forEach(builder::append);
+        box = join(RubikSide.getEmptyString(getSize()), getBottom().getString());
+        box.forEach(builder::append);
+        return builder.toString();
     }
 
     @Override

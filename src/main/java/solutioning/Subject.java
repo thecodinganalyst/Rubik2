@@ -8,6 +8,5 @@ public interface Subject<S> extends Cloneable{
     Action<S>[] getAllActions();
     boolean check();
     boolean isComplete();
-    void print();
     Subject<S> clone() throws CloneNotSupportedException;
 }

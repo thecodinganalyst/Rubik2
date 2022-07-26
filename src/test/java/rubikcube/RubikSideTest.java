@@ -63,5 +63,7 @@ class RubikSideTest {
     void isComplete() {
         RubikSide side = new RubikSide(3, 1);
         assertThat(side.isComplete(), is(true));
+
+        //TODO: add test for isComplete() to return false
     }
 }

@@ -2,6 +2,8 @@ package rubikcube;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -22,5 +24,23 @@ class RubikCubeTest {
 
     @Test
     void check() {
+        RubikCube cube = new RubikCube(3);
+        assertThat(cube.check(), is(true));
+
+        //TODO: add check for false scenario
+    }
+
+    @Test
+    void isComplete() {
+        RubikCube cube = new RubikCube(3);
+        assertThat(cube.isComplete(), is(true));
+
+        //TODO: add check for false scenario
+    }
+
+    @Test
+    void Test_ToString(){
+        RubikCube cube = new RubikCube(3);
+        System.out.println(cube);
     }
 }
