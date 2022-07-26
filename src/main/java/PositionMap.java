@@ -13,4 +13,8 @@ public class PositionMap<V> extends HashMap<Position, V> {
     public V getOrDefault(Integer row, Integer col, V defaultValue) {
         return super.getOrDefault(new Position(row, col), defaultValue);
     }
+
+    public boolean containsKey(Integer row, Integer col) {
+        return super.containsKey(new Position(row, col));
+    }
 }
